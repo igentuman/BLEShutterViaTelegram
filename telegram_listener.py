@@ -1,6 +1,6 @@
 from telegram import Update
 from telegram.ext import Application, MessageHandler, CommandHandler, filters
-#from ble_keyboard import send_shutter
+from ble_keyboard import send_shutter
 from config import BOT_TOKEN, ALLOWED_CHAT_ID
 
 async def start(update: Update, context):
@@ -28,7 +28,7 @@ async def handle(update: Update, context):
 
     if text == "shut":
         print("Shutter command received")
-        #send_shutter()
+        send_shutter()
         await update.message.reply_text("Click!")
 
 def start_bot():
